@@ -1,5 +1,5 @@
 {% set name = "shapelysmooth" %}
-{% set version = "0.1.1" %}
+{% set version = "0.2.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/shapelysmooth-{{ version }}.tar.gz
-  sha256: 02141a11f8f615b418a854475292c107b3e2c6bc5f56e9b683eea9f63ac288a3
+  sha256: 34a2a460fe7907e0eea16c24abcd8885dba29e89e903164e23c807e6250d549b
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 3
+  number: 0
 
 requirements:
   build:
@@ -20,6 +20,7 @@ requirements:
     - pybind11                               # [build_platform != target_platform]
     - {{ compiler('cxx') }}
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - python
     - pybind11
