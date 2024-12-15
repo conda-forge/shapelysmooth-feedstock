@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/shapelysmooth-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/shapelysmooth-{{ version }}.tar.gz
   sha256: 34a2a460fe7907e0eea16c24abcd8885dba29e89e903164e23c807e6250d549b
 
 build:
@@ -25,10 +25,9 @@ requirements:
     - python
     - pybind11
     - pip
+    - setuptools
   run:
     - python
-    - libgcc-ng  # [linux]
-    - libstdcxx-ng  # [linux]
     - shapely
 
 test:
